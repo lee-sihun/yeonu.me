@@ -43,7 +43,7 @@ export default function Title() {
           ref={lottieRef}
           onEnterFrame={handleEnterFrame}
         />
-        <div className="mt-[-15px] text-center text-[24px] text-[#777777] tracking-[-0.52px] leading-[34px] whitespace-pre-line flex items-start">
+        <div className="mt-[-32px] text-center text-[24px] text-[#777777] tracking-[-0.52px] leading-[34px] whitespace-pre-line flex items-start">
           <AnimatePresence mode="wait">
             <motion.p
               key={description} // description이 바뀔 때마다 새로운 key 할당
