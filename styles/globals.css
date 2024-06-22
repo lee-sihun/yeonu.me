@@ -5,6 +5,7 @@
 html,
 body {
   height: 100vh;
+  overflow-x: hidden;
 }
 
 body {
@@ -14,4 +15,26 @@ body {
 
 main {
   flex: 1;
+}
+
+/* 이미지 슬라이더 */
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  max-width: 1200px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
