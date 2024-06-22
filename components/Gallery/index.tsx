@@ -1,21 +1,59 @@
+"use client";
+import { motion, Variants, useAnimationControls } from "framer-motion";
 import ArrowSvg from "@/svg/angle-right-sharp-regular.svg";
 import ImageSlider from "./ImageSlider";
 
 export default function Gallery() {
+  const h2Variants: Variants = {
+    offscreen: { opacity: 0, y: 30 },
+    onscreen: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.4, ease: "easeInOut" },
+    },
+  };
+
+  const buttonVariants: Variants = {
+    offscreen: { opacity: 0, y: 30 },
+    onscreen: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.4, ease: "easeInOut" },
+    },
+  };
+
+  const buttonControls = useAnimationControls();
+
+  const startButtonAnimation = () => {
+    buttonControls.start("onscreen");
+  };
+
   return (
-    <section className="h-screen">
+    <motion.section className="h-screen px-[24px]">
       <div className="mx-auto max-w-[1200px] flex flex-wrap justify-between items-baseline">
-        <h2 className="font-extrabold text-[54px] tracking-[-1.08px]">
+        <motion.h2
+          className="font-extrabold text-[54px] tracking-[-1.08px]"
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 0.8 }}
+          variants={h2Variants}
+          onAnimationComplete={startButtonAnimation} // 애니메이션 완료 시 함수 호출
+        >
           내가 펼치는 세계
-        </h2>
-        <button className="flex items-center justify-center">
+        </motion.h2>
+        <motion.button
+          className="flex items-center justify-center"
+          initial="offscreen"
+          animate={buttonControls}
+          variants={buttonVariants}
+        >
           <p className="font-semibold text-[24px] text-[#1581FF] mr-[7px]">
             더 있어요!
           </p>
           <ArrowSvg />
-        </button>
+        </motion.button>
       </div>
       <ImageSlider />
-    </section>
+    </motion.section>
   );
 }
