@@ -4,21 +4,12 @@ import ArrowSvg from "@/svg/angle-right-sharp-regular.svg";
 import ImageSlider from "./ImageSlider";
 
 export default function Gallery() {
-  const h2Variants: Variants = {
+  const variants: Variants = {
     offscreen: { opacity: 0, y: 30 },
     onscreen: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.4, ease: "easeInOut" },
-    },
-  };
-
-  const buttonVariants: Variants = {
-    offscreen: { opacity: 0, y: 30 },
-    onscreen: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.4, ease: "easeInOut" },
+      transition: { duration: 0.5, ease: "easeInOut" },
     },
   };
 
@@ -36,7 +27,7 @@ export default function Gallery() {
           initial="offscreen"
           whileInView="onscreen"
           viewport={{ once: true, amount: 0.8 }}
-          variants={h2Variants}
+          variants={variants}
           onAnimationComplete={startButtonAnimation} // 애니메이션 완료 시 함수 호출
         >
           내가 펼치는 세계
@@ -45,9 +36,9 @@ export default function Gallery() {
           className="flex items-center justify-center"
           initial="offscreen"
           animate={buttonControls}
-          variants={buttonVariants}
+          variants={variants}
         >
-          <p className="font-semibold text-[24px] text-[#1581FF] mr-[7px]">
+          <p className="font-semibold text-[24px] text-[#1581FF] mr-[7px] hover:underline">
             더 있어요!
           </p>
           <ArrowSvg />
