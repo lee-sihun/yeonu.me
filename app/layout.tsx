@@ -1,5 +1,12 @@
 import "@/styles/globals.css";
 import "@/styles/reset.css";
+import localFont from "next/font/local";
+
+const pretendard = localFont({
+  src: "../public/fonts/PretendardVariable.woff2",
+  display: "swap",
+  weight: "45 920",
+});
 
 export default function RootLayout({
   children,
@@ -8,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={pretendard.className}>
         <main>{children}</main>
       </body>
     </html>
