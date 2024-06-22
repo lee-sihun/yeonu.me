@@ -16,6 +16,7 @@ interface LottieComponentProps extends React.HTMLAttributes<HTMLDivElement> {
   isPaused?: boolean;
   isStopped?: boolean;
   onEnterFrame?: (frame: number) => void;
+  style?: React.CSSProperties; // 스타일 props 추가
 }
 
 // 외부에서 사용할 수 있는 메서드를 정의하는 인터페이스
@@ -34,6 +35,7 @@ const LottieComponent = forwardRef<LottieComponentRef, LottieComponentProps>(
       isPaused,
       isStopped,
       onEnterFrame,
+      style, // 스타일 props 추가
       ...restProps
     },
     ref
@@ -54,6 +56,11 @@ const LottieComponent = forwardRef<LottieComponentRef, LottieComponentProps>(
         },
       };
 
+      // 스타일 props 적용
+      if (style) {
+        Object.assign((animationOptions.container as HTMLElement).style, style); // HTMLElement로 캐스팅
+      }
+
       const animation = Lottie.loadAnimation(animationOptions);
       setAnimationInstance(animation);
 
@@ -67,7 +74,7 @@ const LottieComponent = forwardRef<LottieComponentRef, LottieComponentProps>(
 
       // 컴포넌트 unmount 시 애니메이션 정리
       return () => animation.destroy();
-    }, [animationData, loop, autoplay]); // onEnterFrame 제거
+    }, [animationData, loop, autoplay, style]); // style 추가
 
     // Lottie 인터랙션 관리
     useEffect(() => {
