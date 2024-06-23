@@ -1,11 +1,11 @@
-import { format } from "date-fns"; 
+import { format } from "date-fns";
 
 export default function Header() {
   const today = new Date();
-  const formattedDate = format(today, "yyyy.MM.dd"); 
+  const formattedDate = format(today, "yyyy.MM.dd");
 
   return (
-    <header className="flex justify-between items-center min-h-[46px] border-b-[1px] border-[#e8e8e8] border-solid">
+    <header className="headerglass fixed top-0 left-0 w-full z-[100] flex justify-between items-center min-h-[46px] border-b-[1px] border-[#e8e8e8] border-solid">
       <span className="font-bold text-[18px] text-[#111111] ml-[17px]">
         Introducing!
       </span>
