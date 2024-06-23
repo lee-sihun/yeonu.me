@@ -28,7 +28,7 @@ export default function ProfileCard() {
     <figure
       ref={cardRef}
       onMouseMove={handleMouseMove}
-      className="w-[635px] h-[351px] rounded-[22px] relative 
+      className="rotate-[-4.5deg] w-[635px] h-[351px] rounded-[22px] relative 
                 transition-transform ease-out 
                 hover:[transform:rotateX(var(--x-rotation))_rotateY(var(--y-rotation))_scale(1.05)]
                 [perspective:800px]"
