@@ -120,7 +120,7 @@ export default function SliderButtons() {
               transition={{ duration: 0.3 }}
               className="mx-[18px] text-[24px] text-[#363636] tracking-[-0.48px] whitespace-nowrap select-none"
             >
-              천천히 보세요
+              천천히 보세요!
             </motion.p>
           )}
         </AnimatePresence>
