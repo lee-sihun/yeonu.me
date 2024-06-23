@@ -1,10 +1,38 @@
+"use client";
 import Image from "next/image";
 import bgImage from "@/img/card-background.png";
 import profileImage from "@/img/profile.png";
+import { useRef } from "react";
 
 export default function ProfileCard() {
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  const handleMouseMove = (ev: React.MouseEvent<HTMLDivElement>) => {
+    if (!cardRef.current) return;
+
+    const rect = cardRef.current.getBoundingClientRect();
+    const x = ev.clientX - rect.left;
+    const y = ev.clientY - rect.top;
+    const xPercentage = x / rect.width;
+    const yPercentage = y / rect.height;
+    const xRotation = (xPercentage - 0.5) * 20;
+    const yRotation = (0.5 - yPercentage) * 20;
+
+    cardRef.current.style.setProperty("--x-rotation", `${yRotation}deg`);
+    cardRef.current.style.setProperty("--y-rotation", `${xRotation}deg`);
+    cardRef.current.style.setProperty("--x", `${xPercentage * 100}%`);
+    cardRef.current.style.setProperty("--y", `${yPercentage * 100}%`);
+  };
+
   return (
-    <figure className="w-[635px] h-[351px] rounded-[22px] relative">
+    <figure
+      ref={cardRef}
+      onMouseMove={handleMouseMove}
+      className="w-[635px] h-[351px] rounded-[22px] relative 
+                transition-transform ease-out 
+                hover:[transform:rotateX(var(--x-rotation))_rotateY(var(--y-rotation))_scale(1.05)]
+                [perspective:800px]"
+    >
       <Image
         src={bgImage}
         alt="Background image of the card"
@@ -35,6 +63,8 @@ export default function ProfileCard() {
           020710-4XXXXXX
         </p>
       </div>
+      <div className="pointer-events-none absolute inset-0 group-hover:bg-[radial-gradient(at_var(--x)_var(--y),rgba(255,255,255,0.3)_20%,transparent_80%)]" />
     </figure>
   );
 }
+// https://www.frontend.fyi/v/css-3d-perspective-animations
