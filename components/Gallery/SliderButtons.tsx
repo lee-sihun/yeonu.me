@@ -118,7 +118,7 @@ export default function SliderButtons() {
               animate="visible"
               exit="hidden"
               transition={{ duration: 0.3 }}
-              className="mx-[18px] text-[24px] text-[#363636] tracking-[-0.48px] whitespace-nowrap"
+              className="mx-[18px] text-[24px] text-[#363636] tracking-[-0.48px] whitespace-nowrap select-none"
             >
               천천히 보세요
             </motion.p>
