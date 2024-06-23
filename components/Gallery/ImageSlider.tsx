@@ -34,6 +34,16 @@ export default function ImageSlider() {
             <Image src={world1} alt="world1" width={1200} height={681} />
           </figure>
         </SwiperSlide>
+        <SwiperSlide>
+          <figure className="overflow-hidden w-full rounded-[30px]">
+            <Image src={world1} alt="world1" width={1200} height={681} />
+          </figure>
+        </SwiperSlide>
+        <SwiperSlide>
+          <figure className="overflow-hidden w-full rounded-[30px]">
+            <Image src={world1} alt="world1" width={1200} height={681} />
+          </figure>
+        </SwiperSlide>
         <SliderButtons />
       </Swiper>
     </div>
