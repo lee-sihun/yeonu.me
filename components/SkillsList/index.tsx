@@ -102,15 +102,15 @@ export default function SkillsList() {
             layout
             transition={{
               duration: 0.5,
-              type: "spring",
-              stiffness: 60,
-              damping: 10,
+              // type: "spring",
+              // stiffness: 80,
+              // damping: 10,
             }}
           >
             {Object.entries(skills[activeYear]).map(
               ([skillName, SkillIcon]) => (
                 <motion.div
-                  key={skillName}
+                  key={`${activeYear}-${skillName}`}
                   className="flex flex-col items-center"
                   variants={itemVariants}
                   initial="hidden"
