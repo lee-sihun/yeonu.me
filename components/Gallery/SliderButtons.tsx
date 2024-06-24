@@ -59,7 +59,7 @@ const useSliderControl = (swiper: any) => {
       if (clickCount < 3) {
         setClickCount(0);
       }
-    }, 1000);
+    }, 500);
 
     return () => {
       clearTimeout(warningTimer);
