@@ -18,7 +18,7 @@ export const skills: { [year: string]: SkillSet } = {
     "에프터이펙트": After,
     "프리미어 프로": Premiere,
     "포토샵": PhotoShop,
-    "윈도우 그림판": Paint2,
+    "그림판": Paint2,
     "구글 크롬": Chrome,
   },
   "2023": {
