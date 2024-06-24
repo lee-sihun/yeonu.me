@@ -23,10 +23,10 @@ function YearButton({ active, children, onClick }: YearButtonProps) {
 }
 
 const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 10 },
+  hidden: { opacity: 0, scale: 0.8 },
   visible: {
     opacity: 1,
-    y: 0,
+    scale: 1,
     transition: { duration: 0.3, delay: 0.3 },
   },
 };
@@ -42,8 +42,8 @@ export default function SkillsList() {
   };
 
   return (
-    <section className="h-screen px-[24px]">
-      <div className="mt-[300px] mx-auto max-w-[1200px] flex flex-wrap">
+    <section className="flex justify-center items-center h-screen px-[24px]">
+      <div className="mx-auto max-w-[1200px] flex flex-wrap">
         <h2 className="font-extrabold text-[54px] tracking-[-1.08px]">
           사용하는 프로그램
         </h2>
@@ -59,7 +59,7 @@ export default function SkillsList() {
           ))}
         </div>
         <motion.div
-          className="flex flex-wrap items-center gap-[77px] h-[177px] rounded-[30px] bg-[#E9E9E9] px-[78px] overflow-hidden"
+          className="mx-auto flex flex-wrap items-center gap-[77px] h-[177px] rounded-[30px] bg-[#E9E9E9] px-[78px] overflow-hidden mt-[83px]"
           layout
           transition={{
             duration: 0.5,
