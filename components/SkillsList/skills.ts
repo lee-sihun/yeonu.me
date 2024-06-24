@@ -1,4 +1,3 @@
-import { StaticImageData } from 'next/image';
 import Figma from "@/svg/figma.svg";
 import After from "@/svg/after.svg";
 import Premiere from "@/svg/premiere.svg";
