@@ -37,7 +37,7 @@ export default function ProfileCard() {
         src={bgImage}
         alt="Background image of the card"
         fill={true}
-        className="absolute inset-0"
+        className="absolute inset-0 rounded-[22px]"
       />
       <div className="glass w-full h-full absolute inset-0 z-10" />
       <div className="absolute w-[224px] h-[224px] rounded-[10px] shadow-inner top-[22px] right-[23px] z-20">
