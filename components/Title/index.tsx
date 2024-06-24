@@ -57,7 +57,7 @@ export default function Title() {
           </AnimatePresence>
         </div>
       </motion.div>
-      <div className="absolute z-0 bottom-[48%] flex">
+      <div className="absolute z-0 bottom-[48%] flex select-none">
         <div className="animate-marquee whitespace-nowrap">
           <p className="flex font-black text-[#9D9D9D]/[.16] text-[240px]">
             I like gaming more than working 
