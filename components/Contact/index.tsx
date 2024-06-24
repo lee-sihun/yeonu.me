@@ -20,12 +20,12 @@ export default function Contact() {
       </div>
       <div className="absolute z-0 top-0 flex select-none">
         <div className="animate-marquee3 whitespace-nowrap">
-          <p className="flex font-black text-[#9D9D9D]/[.16] text-[840px] tracking-[-16.4px]">
+          <p className="flex font-black text-[#B4B5DF]/[.05] text-[840px] tracking-[-16.4px]">
             Yeonu Yeonu Yeonu 
           </p>
         </div>
         <div className="absolute top-0 animate-marquee4 whitespace-nowrap">
-          <p className="flex font-black text-[#9D9D9D]/[.16] text-[840px] tracking-[-16.4px]">
+          <p className="flex font-black text-[#B4B5DF]/[.05] text-[840px] tracking-[-16.4px]">
             Yeonu Yeonu Yeonu 
           </p>
         </div>
