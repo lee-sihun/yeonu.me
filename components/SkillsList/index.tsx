@@ -36,7 +36,7 @@ const itemVariants: Variants = {
   visible: {
     opacity: 1,
     scale: 1,
-    transition: { duration: 0.3, delay: 0.3 },
+    transition: { duration: 0.4, delay: 0.3 },
   },
 };
 
@@ -99,12 +99,12 @@ export default function SkillsList() {
         >
           <motion.div
             className="flex flex-wrap items-center gap-[77px] h-[177px] rounded-[30px] bg-[#E9E9E9] px-[78px] overflow-hidden mt-[83px]"
-            layout
+            layoutId="skillsContainer"
             transition={{
               duration: 0.5,
-              // type: "spring",
-              // stiffness: 80,
-              // damping: 10,
+              type: "spring",
+              stiffness: 100,
+              damping: 20,
             }}
           >
             {Object.entries(skills[activeYear]).map(
