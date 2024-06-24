@@ -36,7 +36,7 @@ const itemVariants: Variants = {
   visible: {
     opacity: 1,
     scale: 1,
-    transition: { duration: 0.3, delay: 0.5 },
+    transition: { duration: 0.3, delay: 0.4 },
   },
 };
 
@@ -101,7 +101,7 @@ export default function SkillsList() {
             className="flex flex-wrap items-center gap-[77px] h-[177px] rounded-[30px] bg-[#E9E9E9] px-[78px] overflow-hidden mt-[83px]"
             layoutId="skillsContainer"
             transition={{
-              duration: 0.5,
+              duration: 0.4,
               type: "spring",
               stiffness: 100,
               damping: 20,
