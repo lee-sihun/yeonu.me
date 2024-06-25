@@ -8,7 +8,7 @@ export default function Contact() {
         <h3 className="text-[96px] font-light text-[#111111] tracking-[-1.92px] my-[18px]">
           im@yeonu.me
         </h3>
-        <span className="text-[26px] font-medium text-[#777777] tracking-[-0.52px]">
+        <span className="text-[26px] font-medium text-[#777777] tracking-[-0.52px] leading-[32px]">
           <span className="text-[#111111]">차가운 화면</span> 너머,{" "}
           <span className="text-[#111111]">온기</span>를 느낄 수 있는{" "}
           <span className="text-[#111111]">디자인</span>
