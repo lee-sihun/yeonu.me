@@ -43,7 +43,7 @@ export default function Title() {
           ref={lottieRef}
           onEnterFrame={handleEnterFrame}
         />
-        <div className="mt-[-32px] text-center text-[24px] text-[#777777] tracking-[-0.52px] leading-[34px] whitespace-pre-line flex items-start">
+        <div className="mt-[-32px] text-center text-[24px] max-sm:text-[14px] text-[#777777] tracking-[-0.52px] max-sm:tracking-[-0.28px] leading-[34px] max-sm:leading-[22px] whitespace-pre-line flex items-start">
           <AnimatePresence mode="wait">
             <motion.p
               key={description} // description이 바뀔 때마다 새로운 key 할당
@@ -59,12 +59,12 @@ export default function Title() {
       </motion.div>
       <div className="absolute z-0 bottom-[48%] flex select-none">
         <div className="animate-marquee whitespace-nowrap">
-          <p className="flex font-black text-[#9D9D9D]/[.16] text-[240px]">
+          <p className="flex font-black text-[#9D9D9D]/[.16] text-[240px] max-sm:text-[132px]">
             I like gaming more than working 
           </p>
         </div>
         <div className="absolute top-0 animate-marquee2 whitespace-nowrap">
-          <p className="flex font-black text-[#9D9D9D]/[.16] text-[240px]">
+          <p className="flex font-black text-[#9D9D9D]/[.16] text-[240px] max-sm:text-[132px]">
             I like gaming more than working 
           </p>
         </div>
