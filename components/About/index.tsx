@@ -27,7 +27,7 @@ export default function About() {
   };
 
   return (
-    <section className="relative flex flex-col justify-center items-center h-screen overflow-hidden">
+    <section className="relative flex flex-col justify-center items-center h-screen min-h-[840px] overflow-hidden">
       <motion.div
         ref={textRef}
         className="overflow-hidden about-text"
