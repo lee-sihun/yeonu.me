@@ -80,7 +80,8 @@ main {
     top: 50%;
     transform: translate(-50%, -50%);
   }
-  48% {  /* moveCard 멈추는게 끝나는 시간 */
+  48% {
+    /* moveCard 멈추는게 끝나는 시간 */
     top: 50%;
     transform: translate(-50%, -50%);
   }
@@ -117,9 +118,19 @@ main {
     transform: translate(-50%, -50%);
   }
   100% {
-    top: 342px;
+    top: 342px; /* 162px(80+82) + 200 */
     transform: translate(-50%, -50%);
   }
 }
 
-/* 162px + 200 */
+.about-desc {
+  position: absolute;
+  top: 552px;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, 0%);
+  transition: opacity 0.5s ease 2.5s; /* 딜레이 추가 */ 
+}
+.about-desc.active {
+  opacity: 1;
+}
