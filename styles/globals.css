@@ -62,3 +62,64 @@ main {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 }
+
+/* about 페이지 애니메이션 */
+.about-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: top 0.5s ease, transform 0.5s ease;
+}
+.about-text.active {
+  /* animation-delay: 1s; */
+  animation: moveText 2.5s ease forwards;
+}
+@keyframes moveText {
+  0% {
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  48% {  /* moveCard 멈추는게 끝나는 시간 */
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  80% {
+    top: 200px;
+    transform: translate(-50%, 0%);
+  }
+  100% {
+    top: 82px;
+    transform: translate(-50%, 0%);
+  }
+}
+
+.about-card {
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+.about-card.active {
+  animation: moveCard 2s ease forwards;
+}
+@keyframes moveCard {
+  0% {
+    top: 110%;
+    transform: translate(-50%, 0%);
+  }
+  50% {
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  60% {
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    top: 342px;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* 162px + 200 */
