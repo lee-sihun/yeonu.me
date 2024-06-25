@@ -20,10 +20,10 @@ export default function Gallery() {
   };
 
   return (
-    <motion.section className="h-screen px-[24px]">
+    <motion.section className="h-screen px-[20px]">
       <div className="mx-auto max-w-[1200px] flex flex-wrap justify-between items-baseline">
         <motion.h2
-          className="font-extrabold text-[54px] tracking-[-1.08px]"
+          className="font-extrabold text-[54px] max-sm:text-[32px] tracking-[-1.08px] max-sm:tracking-[-0.64px]"
           initial="offscreen"
           whileInView="onscreen"
           viewport={{ once: true, amount: 0.8 }}
@@ -38,10 +38,12 @@ export default function Gallery() {
           animate={buttonControls}
           variants={variants}
         >
-          <p className="font-semibold text-[24px] text-[#1581FF] mr-[7px] hover:underline">
+          <p className="font-semibold text-[24px] max-sm:text-[18px] text-[#1581FF] mr-[7px] hover:underline">
             더 있어요!
           </p>
-          <ArrowSvg />
+          <div className="w-[16px] h-[26px] max-sm:w-[13px] max-sm:h-[21px]">
+            <ArrowSvg />
+          </div>
         </motion.button>
       </div>
       <ImageSlider />

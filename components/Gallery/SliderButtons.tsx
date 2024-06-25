@@ -2,7 +2,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { useSwiper } from "swiper/react";
 import LeftArrow from "@/svg/arrow-left.svg";
-import RightArrow from "@/svg/arrow-right.svg";
+// import RightArrow from "@/svg/arrow-right.svg";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 
 const buttonVariants: Variants = {
@@ -89,19 +89,21 @@ export default function SliderButtons() {
     useSliderControl(swiper);
 
   return (
-    <div className="flex mt-[57px] justify-center items-center">
+    <div className="flex mt-[57px] max-sm:mt-[18px] justify-center items-center">
       <motion.button
         variants={buttonVariants}
         custom="left"
         animate={showWarning ? "warning" : "normal"}
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
-        className={`w-[70px] h-[70px] rounded-full border-[1px] border-[#C9C9C9] flex items-center justify-center ${
+        className={`w-[70px] h-[70px] max-sm:w-[60px] max-sm:h-[60px] rounded-full border-[1px] border-[#C9C9C9] flex items-center justify-center ${
           isBeginning || showWarning ? "opacity-50 cursor-not-allowed" : ""
         }`}
         onClick={() => handleClick("prev")}
         disabled={isBeginning || showWarning}
       >
-        <LeftArrow />
+        <div className="w-[25px] h-[36px] max-sm:w-[20px] max-sm:h-[29px]">
+          <LeftArrow />
+        </div>
       </motion.button>
       <motion.div
         variants={messageContainerVariants}
@@ -118,7 +120,7 @@ export default function SliderButtons() {
               animate="visible"
               exit="hidden"
               transition={{ duration: 0.3 }}
-              className="mx-[18px] text-[24px] text-[#363636] tracking-[-0.48px] whitespace-nowrap select-none"
+              className="mx-[18px] text-[24px] max-sm:text-[18px] text-[#363636] tracking-[-0.48px] whitespace-nowrap select-none"
             >
               천천히 보세요!
             </motion.p>
@@ -130,13 +132,15 @@ export default function SliderButtons() {
         custom="right"
         animate={showWarning ? "warning" : "normal"}
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
-        className={`w-[70px] h-[70px] rounded-full border-[1px] border-[#C9C9C9] flex items-center justify-center ${
+        className={`w-[70px] h-[70px] max-sm:w-[60px] max-sm:h-[60px] rounded-full border-[1px] border-[#C9C9C9] flex items-center justify-center ${
           isEnd || showWarning ? "opacity-50 cursor-not-allowed" : ""
         }`}
         onClick={() => handleClick("next")}
         disabled={isEnd || showWarning}
       >
-        <RightArrow />
+        <div className="w-[25px] h-[36px] max-sm:w-[20px] max-sm:h-[29px] rotate-180">
+          <LeftArrow/>
+        </div>
       </motion.button>
     </div>
   );

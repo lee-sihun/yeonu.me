@@ -7,7 +7,7 @@ import SliderButtons from "./SliderButtons";
 
 export default function ImageSlider() {
   return (
-    <div className="relative w-full overflow-hidden mt-[63px]">
+    <div className="relative w-full overflow-hidden mt-[63px] max-sm:mt-[22px]">
       <Swiper
         slidesPerView={"auto"}
         centeredSlides={true}
@@ -20,27 +20,27 @@ export default function ImageSlider() {
         className="mySwiper"
       >
         <SwiperSlide>
-          <figure className="overflow-hidden w-full rounded-[30px]">
+          <figure className="overflow-hidden w-full rounded-[30px] max-sm:rounded-[14px]">
             <Image src={world1} alt="world1" width={1200} height={681} />
           </figure>
         </SwiperSlide>
         <SwiperSlide>
-          <figure className="overflow-hidden w-full rounded-[30px]">
+          <figure className="overflow-hidden w-full rounded-[30px] max-sm:rounded-[14px]">
             <Image src={world1} alt="world1" width={1200} height={681} />
           </figure>
         </SwiperSlide>
         <SwiperSlide>
-          <figure className="overflow-hidden w-full rounded-[30px]">
+          <figure className="overflow-hidden w-full rounded-[30px] max-sm:rounded-[14px]">
             <Image src={world1} alt="world1" width={1200} height={681} />
           </figure>
         </SwiperSlide>
         <SwiperSlide>
-          <figure className="overflow-hidden w-full rounded-[30px]">
+          <figure className="overflow-hidden w-full rounded-[30px] max-sm:rounded-[14px]">
             <Image src={world1} alt="world1" width={1200} height={681} />
           </figure>
         </SwiperSlide>
         <SwiperSlide>
-          <figure className="overflow-hidden w-full rounded-[30px]">
+          <figure className="overflow-hidden w-full rounded-[30px] max-sm:rounded-[14px]">
             <Image src={world1} alt="world1" width={1200} height={681} />
           </figure>
         </SwiperSlide>
