@@ -20,7 +20,7 @@ export default function Gallery() {
   };
 
   return (
-    <motion.section className="h-screen px-[20px]">
+    <motion.section className="h-screen max-sm:h-[400px] px-[20px]">
       <div className="mx-auto max-w-[1200px] flex flex-wrap justify-between items-baseline">
         <motion.h2
           className="font-extrabold text-[54px] max-sm:text-[32px] tracking-[-1.08px] max-sm:tracking-[-0.64px]"
