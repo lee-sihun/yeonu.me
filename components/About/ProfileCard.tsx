@@ -28,10 +28,8 @@ export default function ProfileCard() {
     <figure
       ref={cardRef}
       onMouseMove={handleMouseMove}
-      className="rotate-[-4.5deg] w-[635px] h-[351px] rounded-[22px] relative 
-                transition-transform ease-out 
-                hover:[transform:rotateX(var(--x-rotation))_rotateY(var(--y-rotation))_scale(1.05)]
-                [perspective:800px]"
+      // transition-transform ease-out hover:[transform:rotateX(var(--x-rotation))_rotateY(var(--y-rotation))_scale(1.05)] [perspective:800px]
+      className="max-md:scale-[0.5] rotate-[-4.5deg] w-[635px] h-[351px] rounded-[22px] relative transition-transform ease-out hover:[transform:rotateX(var(--x-rotation))_rotateY(var(--y-rotation))_scale(1.05)] max-md:hover:[transform:rotateX(var(--x-rotation))_rotateY(var(--y-rotation))_scale(0.55)] [perspective:800px]"
     >
       <Image
         src={bgImage}
