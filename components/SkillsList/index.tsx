@@ -13,7 +13,7 @@ function YearButton({ active, children, onClick }: YearButtonProps) {
   return (
     <button
       onClick={onClick}
-      className={`flex justify-center items-center w-[106px] h-[54px] rounded-[100px] text-[24px] font-semibold tracking-[-0.48] ml-[12px] ${
+      className={`flex justify-center items-center w-[106px] max-sm:w-[72px] h-[54px] max-sm:h-[36px] rounded-[100px] text-[24px] max-sm:text-[16px] font-semibold tracking-[-0.48] first:ml-0 ml-[12px] max-sm:ml-[9px] ${
         active ? "bg-[#E9E9E9] text-[#111111]" : "text-[#575757]"
       }`}
     >
@@ -62,35 +62,37 @@ export default function SkillsList() {
   };
 
   return (
-    <motion.section className="flex justify-center items-center h-screen px-[24px]">
-      <div className="mx-auto max-w-[1200px] flex flex-wrap">
-        <motion.h2
-          className="font-extrabold text-[54px] tracking-[-1.08px]"
-          initial="offscreen"
-          whileInView="onscreen"
-          viewport={{ once: true, amount: 0.8 }}
-          variants={variants}
-          onAnimationComplete={startButtonAnimation}
-        >
-          사용하는 프로그램
-        </motion.h2>
-        <motion.div
-          className="flex flex-wrap ml-[42px]"
-          initial="offscreen"
-          animate={buttonControls}
-          variants={variants}
-          onAnimationComplete={startSkillAnimation}
-        >
-          {years.map((year) => (
-            <YearButton
-              key={year}
-              active={activeYear === year}
-              onClick={() => handleYearButtonClick(year)}
-            >
-              {year}
-            </YearButton>
-          ))}
-        </motion.div>
+    <motion.section className="flex justify-center items-center h-screen">
+      <div className="mx-auto max-w-[1200px]">
+        <div className="flex flex-row max-xl:flex-col max-xl:items-center px-[20px]">
+          <motion.h2
+            className="font-extrabold text-[54px] max-sm:text-[32px] tracking-[-1.08px] max-sm:tracking-[-0.64px]"
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true, amount: 0.8 }}
+            variants={variants}
+            onAnimationComplete={startButtonAnimation}
+          >
+            사용하는 프로그램
+          </motion.h2>
+          <motion.div
+            className="flex ml-[54px] max-xl:ml-[0px] max-xl:mt-[32px]"
+            initial="offscreen"
+            animate={buttonControls}
+            variants={variants}
+            onAnimationComplete={startSkillAnimation}
+          >
+            {years.map((year) => (
+              <YearButton
+                key={year}
+                active={activeYear === year}
+                onClick={() => handleYearButtonClick(year)}
+              >
+                {year}
+              </YearButton>
+            ))}
+          </motion.div>
+        </div>
         <motion.div
           className="mx-auto flex flex-col"
           initial="offscreen"
@@ -126,7 +128,9 @@ export default function SkillsList() {
               )
             )}
           </motion.div>
-          <p className="mx-auto mt-[50px] font-medium text-[24px] tracking-[-0.48px] text-[#313131]">{skills[activeYear].description}</p>
+          <p className="mx-auto mt-[50px] font-medium text-[24px] tracking-[-0.48px] text-[#313131]">
+            {skills[activeYear].description}
+          </p>
         </motion.div>
       </div>
     </motion.section>
