@@ -92,7 +92,7 @@ export default function SkillsList() {
           ))}
         </motion.div>
         <motion.div
-          className="mx-auto"
+          className="mx-auto flex flex-col"
           initial="offscreen"
           animate={skillControls}
           variants={variants}
@@ -107,7 +107,7 @@ export default function SkillsList() {
               damping: 20,
             }}
           >
-            {Object.entries(skills[activeYear]).map(
+            {Object.entries(skills[activeYear].skills).map(
               ([skillName, SkillIcon]) => (
                 <motion.div
                   key={`${activeYear}-${skillName}`}
@@ -126,6 +126,7 @@ export default function SkillsList() {
               )
             )}
           </motion.div>
+          <p className="mx-auto mt-[50px] font-medium text-[24px] tracking-[-0.48px] text-[#313131]">{skills[activeYear].description}</p>
         </motion.div>
       </div>
     </motion.section>

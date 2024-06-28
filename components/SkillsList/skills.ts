@@ -7,39 +7,59 @@ import Paint2 from "@/svg/paint2.svg";
 import Chrome from "@/svg/chrome.svg";
 import Explorer from "@/svg/explorer.svg";
 
-interface SkillSet {
+interface Skill {
   [skillName: string]: React.ComponentType;
+}
+
+interface SkillSet {
+  description: string,
+  skills: Skill
 }
 
 export const skills: { [year: string]: SkillSet } = {
   "2024": {
-    "피그마": Figma,
-    "에프터이펙트": After,
-    "프리미어 프로": Premiere,
-    "포토샵": PhotoShop,
-    "그림판": Paint2,
-    "구글 크롬": Chrome,
+    description: "2024 프로그램",
+    skills: {
+      "피그마": Figma,
+      "에프터이펙트": After,
+      "프리미어 프로": Premiere,
+      "포토샵": PhotoShop,
+      "그림판": Paint2,
+      "구글 크롬": Chrome,
+    },
   },
   "2023": {
-    "에프터이펙트": After,
-    "프리미어 프로": Premiere,
-    "포토샵": PhotoShop,
-    "윈도우 그림판": Paint,
-    "구글 크롬": Chrome,
+    description: "2023 프로그램",
+    skills: {
+      "에프터이펙트": After,
+      "프리미어 프로": Premiere,
+      "포토샵": PhotoShop,
+      "윈도우 그림판": Paint,
+      "구글 크롬": Chrome,
+    }
   },
   "2020": {
-    "프리미어 프로": Premiere,
-    "포토샵": PhotoShop,
-    "윈도우 그림판": Paint,
-    "익스플로러": Explorer,
+    description: "2020 프로그램",
+    skills: {
+      "프리미어 프로": Premiere,
+      "포토샵": PhotoShop,
+      "윈도우 그림판": Paint,
+      "익스플로러": Explorer,
+    }
   },
   "2017": {
-    "포토샵": PhotoShop,
-    "윈도우 그림판": Paint,
-    "익스플로러": Explorer,
+    description: "2017 프로그램",
+    skills: {
+      "포토샵": PhotoShop,
+      "윈도우 그림판": Paint,
+      "익스플로러": Explorer,
+    }
   },
   "2009": {
-    "윈도우 그림판": Paint,
-    "익스플로러": Explorer,
+    description: "처음 컴퓨터를 접할 때 사용했던 프로그램",
+    skills: {
+      "윈도우 그림판": Paint,
+      "익스플로러": Explorer,
+    }
   },
 }
