@@ -14,6 +14,7 @@ export default function About() {
     visible: {
       clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
       transition: {
+        // delay: 1,
         duration: 0.5,
         ease: "easeOut",
       },
@@ -37,7 +38,7 @@ export default function About() {
         viewport={{ once: true }}
         onAnimationComplete={cardAnimation}
       >
-        <h2 className="font-extrabold text-[80px] tracking-[-1.6px]">
+        <h2 className="font-extrabold text-[80px] max-md:text-[34px] tracking-[-1.6px]">
           근데 누구..?
         </h2>
       </motion.div>
@@ -46,11 +47,13 @@ export default function About() {
       </div>
       <article ref={descRef} className="about-desc">
         <div className="flex flex-col items-center">
-          <p className="text-[30px] font-extrabold text-[#777777] tracking-[-0.32px]">
+          <p className="text-[30px] max-md:text-[24px] font-extrabold text-[#777777] tracking-[-0.32px] max-md:tracking-[-0.48px]">
             CONTACT <span className="text-[#3F3F3F]">. ME!</span>
           </p>
-          <ArrowSvg className="mt-[30px]" />
-          <span className="mt-[38px] text-center text-[26px] font-medium text-[#777777] tracking-[-0.52px] leading-[32px] whitespace-nowrap">
+          <div className="w-[31px] max-md:w-[24px]">
+            <ArrowSvg className="mt-[30px] max-md:mt-[20px]" />
+          </div>
+          <span className="mt-[38px] max-md:mt-[27px] text-center text-[26px] max-md:text-[16px] font-medium text-[#777777] tracking-[-0.52px] leading-[32px] whitespace-nowrap">
             앗, 제 소개를 깜빡했군요.
             <br /> 안녕하세요!{" "}
             <span className="text-[#3F3F3F] underline">

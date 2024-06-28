@@ -29,7 +29,7 @@ export default function ProfileCard() {
       ref={cardRef}
       onMouseMove={handleMouseMove}
       // transition-transform ease-out hover:[transform:rotateX(var(--x-rotation))_rotateY(var(--y-rotation))_scale(1.05)] [perspective:800px]
-      className="max-md:scale-[0.5] rotate-[-4.5deg] w-[635px] h-[351px] rounded-[22px] relative transition-transform ease-out hover:[transform:rotateX(var(--x-rotation))_rotateY(var(--y-rotation))_scale(1.05)] max-md:hover:[transform:rotateX(var(--x-rotation))_rotateY(var(--y-rotation))_scale(0.55)] [perspective:800px]"
+      className="rotate-[-4.5deg] w-[635px] h-[351px] rounded-[22px] relative transition-transform ease-out hover:[transform:rotateX(var(--x-rotation))_rotateY(var(--y-rotation))_scale(1.05)] max-md:hover:[transform:rotateX(var(--x-rotation))_rotateY(var(--y-rotation))_scale(0.55)] [perspective:800px] max-md:scale-[0.5]"
     >
       <Image
         src={bgImage}
