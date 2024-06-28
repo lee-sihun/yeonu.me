@@ -209,3 +209,8 @@ main {
     }
   }
 }
+
+/* 스크롤 */
+.scroll::-webkit-scrollbar{
+  display: none; 
+}

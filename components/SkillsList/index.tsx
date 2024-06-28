@@ -1,6 +1,6 @@
 "use client";
 import { useState, ReactNode } from "react";
-import { skills } from "./skills";
+import { skills } from "@/components/SkillsList/skills";
 import { motion, Variants, useAnimationControls } from "framer-motion";
 
 interface YearButtonProps {
@@ -13,7 +13,7 @@ function YearButton({ active, children, onClick }: YearButtonProps) {
   return (
     <button
       onClick={onClick}
-      className={`flex justify-center items-center w-[106px] max-sm:w-[72px] h-[54px] max-sm:h-[36px] rounded-[100px] text-[24px] max-sm:text-[16px] font-semibold tracking-[-0.48] first:ml-0 ml-[12px] max-sm:ml-[9px] ${
+      className={`w-[106px] max-sm:w-[72px] h-[54px] max-sm:h-[36px] rounded-[100px] text-[24px] max-sm:text-[16px] font-semibold tracking-[-0.48] mr-[12px] max-sm:mr-[9px] ${
         active ? "bg-[#E9E9E9] text-[#111111]" : "text-[#575757]"
       }`}
     >
@@ -40,7 +40,7 @@ const itemVariants: Variants = {
   },
 };
 
-export default function SkillsList() {
+export default function Test() {
   const [activeYear, setActiveYear] = useState<string>(
     Object.keys(skills).reverse()[0]
   );
@@ -62,11 +62,11 @@ export default function SkillsList() {
   };
 
   return (
-    <motion.section className="flex justify-center items-center h-screen">
-      <div className="mx-auto max-w-[1200px]">
-        <div className="flex flex-row max-xl:flex-col max-xl:items-center px-[20px]">
+    <motion.section className="mt-20 max-w-[1200px] mx-auto">
+      <div className="mx-5">
+        <div className="flex mx-auto max-xl:flex-col">
           <motion.h2
-            className="font-extrabold text-[54px] max-sm:text-[32px] tracking-[-1.08px] max-sm:tracking-[-0.64px]"
+            className="max-xl:mx-auto font-extrabold text-[54px] max-sm:text-[32px] tracking-[-1.08px] max-sm:tracking-[-0.64px]"
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: true, amount: 0.8 }}
@@ -75,23 +75,27 @@ export default function SkillsList() {
           >
             사용하는 프로그램
           </motion.h2>
-          <motion.div
-            className="flex ml-[54px] max-xl:ml-[0px] max-xl:mt-[32px]"
-            initial="offscreen"
-            animate={buttonControls}
-            variants={variants}
-            onAnimationComplete={startSkillAnimation}
-          >
-            {years.map((year) => (
-              <YearButton
-                key={year}
-                active={activeYear === year}
-                onClick={() => handleYearButtonClick(year)}
+          <div className="flex justify-center">
+            <div className="max-w-[100%] overflow-hidden">
+              <motion.div
+                className="overflow-x-scroll whitespace-nowrap scroll ml-[54px] max-xl:ml-[0px] max-xl:mt-[32px]"
+                initial="offscreen"
+                animate={buttonControls}
+                variants={variants}
+                onAnimationComplete={startSkillAnimation}
               >
-                {year}
-              </YearButton>
-            ))}
-          </motion.div>
+                {years.map((year) => (
+                  <YearButton
+                    key={year}
+                    active={activeYear === year}
+                    onClick={() => handleYearButtonClick(year)}
+                  >
+                    {year}
+                  </YearButton>
+                ))}
+              </motion.div>
+            </div>
+          </div>
         </div>
         <motion.div
           className="mx-auto flex flex-col"
@@ -100,7 +104,7 @@ export default function SkillsList() {
           variants={variants}
         >
           <motion.div
-            className="flex flex-wrap items-center gap-[77px] h-[177px] rounded-[30px] bg-[#E9E9E9] px-[78px] overflow-hidden mt-[83px]"
+            className="mx-auto flex flex-wrap items-center gap-[77px] w-fit h-[177px] rounded-[30px] bg-[#E9E9E9] px-[78px] overflow-hidden mt-[83px]"
             layoutId="skillsContainer"
             transition={{
               duration: 0.4,
