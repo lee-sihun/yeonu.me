@@ -64,6 +64,7 @@ main {
 }
 
 /* about 페이지 애니메이션 */
+/* 텍스트 애니메이션 */
 .about-text {
   position: absolute;
   top: 50%;
@@ -94,7 +95,32 @@ main {
     transform: translate(-50%, 0%);
   }
 }
+@media (max-width: 768px) {
+  .about-text.active {
+    animation-name: moveTextMd;
+  }
 
+  @keyframes moveTextMd {
+    0% {
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    48% {
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    80% {
+      top: 270px;
+      transform: translate(-50%, 0%);
+    }
+    100% {
+      top: 200px;
+      transform: translate(-50%, 0%);
+    }
+  }
+}
+
+/* 카드 애니메이션 */
 .about-card {
   position: absolute;
   top: 110%;
@@ -122,15 +148,64 @@ main {
     transform: translate(-50%, -50%);
   }
 }
+@media (max-width: 768px) {
+  .about-card.active {
+    animation-name: moveCardMd;
+  }
+  @keyframes moveCardMd {
+    0% {
+      top: 110%;
+      transform: translate(-50%, 0%);
+    }
+    50% {
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    60% {
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    100% {
+      top: 328px; /* 234px(34+200) + 100 */
+      transform: translate(-50%, -50%);
+    }
+  }
+}
 
+/* 설명 애니메이션 */
 .about-desc {
   position: absolute;
   top: 552px;
   left: 50%;
   opacity: 0;
   transform: translate(-50%, 0%);
-  transition: opacity 0.5s ease 2.5s; /* 딜레이 추가 */ 
 }
 .about-desc.active {
-  opacity: 1;
+  animation: showDesc 0.5s ease forwards;
+  animation-delay: 2.5s;
+}
+@keyframes showDesc {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@media (max-width: 768px) {
+  .about-desc {
+    top: 444px;
+  }
+  .about-desc.active {
+    animation-name: showDescMd;
+  }
+
+  @keyframes showDescMd {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 }
