@@ -104,7 +104,7 @@ export default function Test() {
           variants={variants}
         >
           <motion.div
-            className="mx-auto flex flex-wrap justify-center items-center gap-x-[74px] gap-y-[30px] w-fit rounded-[30px] bg-[#E9E9E9] px-[78px] overflow-hidden mt-[83px] pt-[14px] pb-[11px]"
+            className="mx-auto flex flex-wrap justify-center items-center gap-x-[74px] max-sm:gap-x-[30px] gap-y-[30px] w-fit rounded-[30px] max-sm:rounded-[14px] bg-[#E9E9E9] px-[78px] max-sm:px-[20px] overflow-hidden mt-[83px] max-xl:mt-[32px] pt-[14px] pb-[11px]"
             layoutId="skillsContainer"
             transition={{
               duration: 0.4,
@@ -117,24 +117,24 @@ export default function Test() {
               ([skillName, SkillIcon]) => (
                 <motion.div
                   key={`${activeYear}-${skillName}`}
-                  className="flex flex-col justify-center items-center w-[87px]"
+                  className="flex flex-col justify-center items-center w-[87px] max-sm:w-[75px]"
                   variants={itemVariants}
                   initial="hidden"
                   animate="visible"
                 >
-                  <div className="flex h-[85px] items-center mb-[16px]">
-                    <div className="sca le-[0.41]">
+                  <div className="flex h-[85px] max-sm:h-[52px] items-center mb-[16px] max-sm:mb-[7px]">
+                    <div className="max-sm:scale-[0.6]">
                       <SkillIcon />
                     </div>
                   </div>
-                  <p className="relative font-medium text-[16px] text-[#313131] tracking-[-0.32px]">
+                  <p className="relative font-medium text-[16px] max-sm:text-[14px] text-[#313131] tracking-[-0.32px]">
                     {skillName}
                   </p>
                 </motion.div>
               )
             )}
           </motion.div>
-          <p className="mx-auto mt-[50px] font-medium text-[24px] tracking-[-0.48px] text-[#313131]">
+          <p className="mx-auto mt-[50px] max-sm:mt-[32px] font-medium text-[24px] max-sm:text-[20px] tracking-[-0.48px] text-[#313131]">
             {skills[activeYear].description}
           </p>
         </motion.div>
