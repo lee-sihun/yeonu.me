@@ -95,7 +95,7 @@ main {
     transform: translate(-50%, 0%);
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .about-text.active {
     animation-name: moveTextMd;
   }
@@ -148,7 +148,7 @@ main {
     transform: translate(-50%, -50%);
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .about-card.active {
     animation-name: moveCardMd;
   }
@@ -192,7 +192,7 @@ main {
     opacity: 1;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .about-desc {
     top: 444px;
   }
@@ -211,6 +211,6 @@ main {
 }
 
 /* 스크롤 */
-.scroll::-webkit-scrollbar{
-  display: none; 
+.scroll::-webkit-scrollbar {
+  display: none;
 }
