@@ -104,7 +104,7 @@ export default function Test() {
           variants={variants}
         >
           <motion.div
-            className="mx-auto flex flex-wrap items-center gap-[77px] w-fit h-[177px] rounded-[30px] bg-[#E9E9E9] px-[78px] overflow-hidden mt-[83px]"
+            className="mx-auto flex flex-wrap justify-center items-center gap-x-[74px] gap-y-[30px] w-fit rounded-[30px] bg-[#E9E9E9] px-[78px] overflow-hidden mt-[83px] pt-[14px] pb-[11px]"
             layoutId="skillsContainer"
             transition={{
               duration: 0.4,
@@ -117,13 +117,15 @@ export default function Test() {
               ([skillName, SkillIcon]) => (
                 <motion.div
                   key={`${activeYear}-${skillName}`}
-                  className="flex flex-col items-center"
+                  className="flex flex-col justify-center items-center w-[87px]"
                   variants={itemVariants}
                   initial="hidden"
                   animate="visible"
                 >
                   <div className="flex h-[85px] items-center mb-[16px]">
-                    <SkillIcon />
+                    <div className="sca le-[0.41]">
+                      <SkillIcon />
+                    </div>
                   </div>
                   <p className="relative font-medium text-[16px] text-[#313131] tracking-[-0.32px]">
                     {skillName}
