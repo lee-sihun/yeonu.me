@@ -62,7 +62,7 @@ export default function Test() {
   };
 
   return (
-    <motion.section className="mt-20 max-w-[1200px] mx-auto">
+    <motion.section className="mt-20 max-w-[1220px] mx-auto">
       <div className="mx-5">
         <div className="flex mx-auto max-xl:flex-col">
           <motion.h2
