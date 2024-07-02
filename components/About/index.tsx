@@ -1,20 +1,38 @@
 "use client";
-import { useRef } from "react";
-import { motion } from "framer-motion";
+import { useRef, useEffect } from "react";
+import { motion, useInView } from "framer-motion";
 import ProfileCard from "./ProfileCard";
 import ArrowSvg from "@/svg/arrow-bottom.svg";
 
 export default function About() {
+  const sectionRef = useRef<HTMLElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
   const descRef = useRef<HTMLDivElement>(null);
+
+  const isInView = useInView(sectionRef, { amount: 0.99, once: true });
+
+  useEffect(() => {
+    if (isInView) {
+      document.body.style.overflow = "hidden";
+      // 3초 후 스크롤 잠금 해제
+      const timer = setTimeout(() => {
+        document.body.style.overflow = "";
+      }, 3000);
+
+      // 컴포넌트가 언마운트되거나 의존성이 변경될 때 타이머 정리
+      return () => {
+        clearTimeout(timer);
+        document.body.style.overflow = "";
+      };
+    }
+  }, [isInView]);
 
   const divVariants = {
     hidden: { clipPath: "polygon(0 0, 0% 0, 0% 100%, 0% 100%)" },
     visible: {
       clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
       transition: {
-        // delay: 1,
         duration: 0.5,
         ease: "easeOut",
       },
@@ -28,14 +46,16 @@ export default function About() {
   };
 
   return (
-    <section className="relative flex flex-col justify-center items-center h-screen min-h-[840px] overflow-hidden">
+    <section
+      ref={sectionRef}
+      className="relative flex flex-col justify-center items-center h-screen min-h-[840px] overflow-hidden"
+    >
       <motion.div
         ref={textRef}
         className="overflow-hidden about-text"
         variants={divVariants}
         initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
+        animate={isInView ? "visible" : "hidden"}
         onAnimationComplete={cardAnimation}
       >
         <h2 className="font-extrabold text-[80px] max-md:text-[34px] tracking-[-1.6px]">
