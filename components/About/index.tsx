@@ -10,7 +10,11 @@ export default function About() {
   const cardRef = useRef<HTMLDivElement>(null);
   const descRef = useRef<HTMLDivElement>(null);
 
-  const isInView = useInView(sectionRef, { amount: 0.99, once: true });
+  const isInView = useInView(sectionRef, {
+    amount: 0.8,
+    once: true,
+    margin: "0px 0px -20% 0px",
+  });
 
   useEffect(() => {
     if (isInView) {
