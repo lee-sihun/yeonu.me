@@ -13,7 +13,7 @@ export default function About() {
   const isInView = useInView(sectionRef, {
     amount: 0.8,
     once: true,
-    margin: "0px 0px -20% 0px",
+    margin: "0px 0px -10% 0px",
   });
 
   useEffect(() => {
@@ -52,7 +52,7 @@ export default function About() {
   return (
     <section
       ref={sectionRef}
-      className="relative flex flex-col justify-center items-center h-screen min-h-[840px] overflow-hidden"
+      className="relative flex flex-col justify-center items-center h-screen md:min-h-[840px] overflow-hidden"
     >
       <motion.div
         ref={textRef}
