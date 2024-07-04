@@ -52,8 +52,9 @@ export default function About() {
   return (
     <section
       ref={sectionRef}
-      className="relative flex flex-col justify-center items-center h-screen md:min-h-[840px] overflow-hidden"
+      className="relative flex flex-col justify-center items-center h-screen min-h-[730px] md:min-h-[840px] overflow-hidden"
     >
+      {/* <div className="absoulute w-full h-full bg-red-500"/> */}
       <motion.div
         ref={textRef}
         className="overflow-hidden about-text"
