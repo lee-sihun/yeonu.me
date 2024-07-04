@@ -13,7 +13,7 @@ export default function About() {
   const isInView = useInView(sectionRef, {
     amount: 0.8,
     once: true,
-    margin: "0px 0px -10% 0px",
+    margin: "0px 0px -20% 0px",
   });
 
   useEffect(() => {
@@ -43,6 +43,17 @@ export default function About() {
     },
   };
 
+  const backgroundVariants = {
+    hidden: { scaleX: 0, originX: 0 },
+    visible: {
+      scaleX: 1,
+      transition: {
+        duration: 2,  
+        ease: [0.5, 0.1, 0.1, 0.9],
+      },
+    },
+  };
+
   const cardAnimation = () => {
     cardRef.current?.classList.add("active");
     textRef.current?.classList.add("active");
@@ -52,9 +63,14 @@ export default function About() {
   return (
     <section
       ref={sectionRef}
-      className="relative flex flex-col justify-center items-center h-screen min-h-[730px] md:min-h-[840px] overflow-hidden"
+      className="relative flex flex-col justify-center items-center h-screen min-h-[530px] md:min-h-[840px] overflow-hidden"
     >
-      {/* <div className="absoulute w-full h-full bg-red-500"/> */}
+      <motion.div
+        className="absolute w-full h-full bg-[#BCCFFF]/[0.1]"
+        variants={backgroundVariants}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+      />
       <motion.div
         ref={textRef}
         className="overflow-hidden about-text"
