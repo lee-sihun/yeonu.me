@@ -1,6 +1,6 @@
 export default function Contact() {
   return (
-    <section className="relative flex max-w-[1220px] h-screen mx-auto px-5">
+    <section className="relative flex max-w-[1220px] h-screen mx-auto px-5 overflow-x-hidden">
       <div className="my-auto">
         <h2 className="max-md:text-[24px] text-[30px] font-extrabold text-[#777777] tracking-[-0.32px]">
           CONTACT <span className="text-[#3F3F3F]">. ME!</span>

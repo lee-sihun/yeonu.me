@@ -36,7 +36,7 @@ export default function Title() {
 
   return (
     <motion.section
-      className="relative flex justify-center h-screen"
+      className="relative flex justify-center h-screen overflow-x-hidden"
       initial="offscreen"
       whileInView="onscreen"
       viewport={{ once: true, amount: 0.8 }}

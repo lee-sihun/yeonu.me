@@ -20,7 +20,7 @@ export default function Gallery() {
   };
 
   return (
-    <motion.section className="h-screen px-[20px] mb-[50px]">
+    <motion.section className="h-screen px-[20px] mb-[50px] overflow-x-hidden">
       <div className="mx-auto max-w-[1200px] flex flex-wrap justify-between items-baseline">
         <motion.h2
           className="font-extrabold text-[54px] max-sm:text-[32px] tracking-[-1.08px] max-sm:tracking-[-0.64px]"
