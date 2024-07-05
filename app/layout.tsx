@@ -10,10 +10,10 @@ export const metadata: Metadata = {
     default: "yeonu.me",
     template: "%s - yeonu.me",
   },
-  description: "비주얼 아이덴티티 디자이너 연우입니다",
+  description: "내가 펼치는 세계",
   openGraph: {
     title: "yeonu.me",
-    description: "비주얼 아이덴티티 디자이너 연우입니다.",
+    description: "내가 펼치는 세계",
     type: "website",
     siteName: "yeonu.me",
     url: "https://yeonu.me",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "yeonu.me",
-    description: "비주얼 아이덴티티 디자이너 연우입니다.",
+    description: "내가 펼치는 세계",
     images: [
       {
         url: "/img/logo.jpg",
