@@ -89,7 +89,7 @@ export default function SliderButtons() {
     useSliderControl(swiper);
 
   return (
-    <div className="flex mt-[57px] max-sm:mt-[18px] justify-center items-center">
+    <div className="flex mt-[58px] max-sm:mt-[18px] justify-center items-center">
       <motion.button
         variants={buttonVariants}
         custom="left"
