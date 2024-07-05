@@ -1,6 +1,6 @@
 "use client";
 import { useRef, useEffect } from "react";
-import { motion, useInView } from "framer-motion";
+import { delay, motion, useInView } from "framer-motion";
 import ProfileCard from "./ProfileCard";
 import ArrowSvg from "@/svg/arrow-bottom.svg";
 
@@ -13,11 +13,21 @@ export default function About() {
   const isInView = useInView(sectionRef, {
     amount: 0.8,
     once: true,
-    margin: "0px 0px -20% 0px",
+    // margin: "0px 0px -20% 0px",
   });
 
   useEffect(() => {
     if (isInView) {
+
+      if (sectionRef.current) {
+        window.scrollTo({
+          top:
+            document.documentElement.scrollTop +
+            sectionRef.current.getBoundingClientRect().top,
+          behavior: "smooth",
+        });
+      }
+
       document.body.style.overflow = "hidden";
       // 3초 후 스크롤 잠금 해제
       const timer = setTimeout(() => {
