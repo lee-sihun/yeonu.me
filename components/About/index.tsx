@@ -18,7 +18,6 @@ export default function About() {
 
   useEffect(() => {
     if (isInView) {
-
       if (sectionRef.current) {
         window.scrollTo({
           top:
@@ -49,7 +48,7 @@ export default function About() {
       originX: 1,
       transition: {
         duration: 1.5,
-        ease: [0.5, 0.1, 0.1, 0.9],
+        ease: [.33,.04,.08,.73],
       },
     },
   };
@@ -83,12 +82,12 @@ export default function About() {
       <article ref={descRef} className="about-desc">
         <div className="flex flex-col items-center">
           <p className="text-[30px] max-md:text-[24px] font-extrabold text-[#777777] tracking-[-0.32px] max-md:tracking-[-0.48px]">
-            CONTACT <span className="text-[#3F3F3F]">. ME!</span>
+            ABOUT <span className="text-[#3F3F3F]">. ME!</span>
           </p>
           <div className="w-[31px] max-md:w-[24px]">
             <ArrowSvg className="mt-[30px] max-md:mt-[20px]" />
           </div>
-          <span className="mt-[38px] max-md:mt-[27px] text-center text-[26px] max-md:text-[16px] font-medium text-[#777777] tracking-[-0.52px] leading-[32px] whitespace-nowrap">
+          <span className="mt-[38px] max-md:mt-[27px] text-center text-[26px] max-md:text-[16px] font-medium text-[#777777] tracking-[-0.52px] leading-[34px] whitespace-nowrap">
             앗, 제 소개를 깜빡했군요.
             <br /> 안녕하세요!{" "}
             <span className="text-[#3F3F3F] underline">

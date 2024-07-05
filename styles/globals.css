@@ -148,7 +148,7 @@ main {
     transform: translate(-50%, -50%);
   }
   100% {
-    top: 342px; /* 162px(80+82) + 200 */
+    top: 334px; /* 162px(80+82) + 200 */
     transform: translate(-50%, -50%);
   }
 }
