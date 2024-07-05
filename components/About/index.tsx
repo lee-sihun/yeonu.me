@@ -32,23 +32,13 @@ export default function About() {
     }
   }, [isInView]);
 
-  const divVariants = {
-    hidden: { clipPath: "polygon(0 0, 0% 0, 0% 100%, 0% 100%)" },
-    visible: {
-      clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
-      transition: {
-        duration: 0.5,
-        ease: "easeOut",
-      },
-    },
-  };
-
   const backgroundVariants = {
-    hidden: { scaleX: 0, originX: 0 },
+    hidden: { scaleX: 1, originX: 1 },
     visible: {
-      scaleX: 1,
+      scaleX: 0,
+      originX: 1,
       transition: {
-        duration: 2,  
+        duration: 1.5,
         ease: [0.5, 0.1, 0.1, 0.9],
       },
     },
@@ -63,26 +53,20 @@ export default function About() {
   return (
     <section
       ref={sectionRef}
-      className="relative flex flex-col justify-center items-center h-screen min-h-[530px] md:min-h-[840px] overflow-hidden"
+      className="bg-[#BCCFFF]/[0.1] relative flex flex-col justify-center items-center h-screen min-h-[530px] md:min-h-[840px] overflow-hidden"
     >
       <motion.div
-        className="absolute w-full h-full bg-[#BCCFFF]/[0.1]"
+        className="absolute w-full h-full bg-white z-10"
         variants={backgroundVariants}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
-      />
-      <motion.div
-        ref={textRef}
-        className="overflow-hidden about-text"
-        variants={divVariants}
-        initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
         onAnimationComplete={cardAnimation}
-      >
+      />
+      <div ref={textRef} className="overflow-hidden about-text">
         <h2 className="font-extrabold text-[80px] max-md:text-[34px] tracking-[-1.6px]">
           근데 누구..?
         </h2>
-      </motion.div>
+      </div>
       <div ref={cardRef} className="about-card">
         <ProfileCard />
       </div>
