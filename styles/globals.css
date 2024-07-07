@@ -114,11 +114,11 @@ main {
       transform: translate(-50%, -50%);
     }
     80% {
-      top: 270px;
+      top: 170px;
       transform: translate(-50%, 0%);
     }
     100% {
-      top: 200px;
+      top: 100px;
       transform: translate(-50%, 0%);
     }
   }
@@ -170,7 +170,7 @@ main {
       transform: translate(-50%, -50%);
     }
     100% {
-      top: 328px; /* 234px(34+200) + 100 */
+      top: 228px; /* 234px(34+200) + 100 */
       transform: translate(-50%, -50%);
     }
   }
@@ -198,7 +198,7 @@ main {
 }
 @media (max-width: 767px) {
   .about-desc {
-    top: 444px;
+    top: 344px;
   }
   .about-desc.active {
     animation-name: showDescMd;
