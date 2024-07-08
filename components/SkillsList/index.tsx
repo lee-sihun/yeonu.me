@@ -106,6 +106,8 @@ export default function Test() {
           <motion.div
             className="mx-auto flex flex-wrap justify-center items-center gap-x-[74px] max-sm:gap-x-[30px] gap-y-[30px] w-fit rounded-[30px] max-sm:rounded-[14px] bg-[#E9E9E9] px-[78px] max-sm:px-[20px] overflow-hidden mt-[83px] max-xl:mt-[32px] pt-[30px] pb-[34px]"
             layoutId="skillsContainer"
+            initial={{ borderRadius: 30 }}
+            animate={{ borderRadius: [30, 30] }}
             transition={{
               duration: 0.4,
               type: "spring",
