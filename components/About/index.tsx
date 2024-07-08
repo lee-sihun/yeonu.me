@@ -17,6 +17,8 @@ export default function About() {
   });
 
   useEffect(() => {
+    const preventScroll = (e: TouchEvent) => e.preventDefault();
+
     if (isInView) {
       if (sectionRef.current) {
         window.scrollTo({
@@ -28,15 +30,18 @@ export default function About() {
       }
 
       document.body.style.overflow = "hidden";
+      document.body.addEventListener('touchmove', preventScroll, { passive: false });
       // 3초 후 스크롤 잠금 해제
       const timer = setTimeout(() => {
         document.body.style.overflow = "";
-      }, 3000);
+        document.body.removeEventListener('touchmove', preventScroll);
+      }, 4500);
 
       // 컴포넌트가 언마운트되거나 의존성이 변경될 때 타이머 정리
       return () => {
         clearTimeout(timer);
         document.body.style.overflow = "";
+        document.body.removeEventListener('touchmove', preventScroll);
       };
     }
   }, [isInView]);
