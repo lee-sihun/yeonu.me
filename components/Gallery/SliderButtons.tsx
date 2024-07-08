@@ -5,6 +5,12 @@ import LeftArrow from "@/svg/arrow-left.svg";
 // import RightArrow from "@/svg/arrow-right.svg";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 
+interface SliderButtonsProps {
+  // 추가된 부분
+  clickNext: boolean;
+  setClickNext: (value: boolean) => void;
+}
+
 const buttonVariants: Variants = {
   normal: { x: 0 },
   warning: (direction: "left" | "right") => ({
@@ -83,10 +89,20 @@ const useSliderControl = (swiper: any) => {
   return { isBeginning, isEnd, showWarning, handleClick };
 };
 
-export default function SliderButtons() {
+export default function SliderButtons({
+  clickNext,
+  setClickNext,
+}: SliderButtonsProps) {
   const swiper = useSwiper();
   const { isBeginning, isEnd, showWarning, handleClick } =
     useSliderControl(swiper);
+
+  useEffect(() => {
+    if (clickNext) {
+      handleClick("next");
+      setClickNext(false);
+    }
+  }, [clickNext, handleClick, setClickNext]);
 
   return (
     <div className="flex mt-[58px] max-sm:mt-[18px] justify-center items-center">
@@ -139,7 +155,7 @@ export default function SliderButtons() {
         disabled={isEnd || showWarning}
       >
         <div className="w-[25px] h-[36px] max-sm:w-[20px] max-sm:h-[29px] rotate-180">
-          <LeftArrow/>
+          <LeftArrow />
         </div>
       </motion.button>
     </div>

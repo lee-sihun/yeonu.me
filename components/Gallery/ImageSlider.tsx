@@ -5,7 +5,16 @@ import Image from "next/image";
 import world1 from "@/img/KakaoTalk_Photo_2024-07-05-23-19-01.png";
 import SliderButtons from "./SliderButtons";
 
-export default function ImageSlider() {
+interface ImageSliderProps {
+  // 추가된 부분
+  clickNext: boolean;
+  setClickNext: (value: boolean) => void;
+}
+
+export default function ImageSlider({
+  clickNext,
+  setClickNext,
+}: ImageSliderProps) {
   return (
     <div className="relative w-full overflow-hidden mt-[58px] max-sm:mt-[22px]">
       <Swiper
@@ -34,7 +43,7 @@ export default function ImageSlider() {
             <Image src={world1} alt="world1" width={1200} height={675} />
           </figure>
         </SwiperSlide>
-        <SliderButtons />
+        <SliderButtons clickNext={clickNext} setClickNext={setClickNext} />
       </Swiper>
     </div>
   );

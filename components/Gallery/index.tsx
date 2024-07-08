@@ -1,9 +1,16 @@
 "use client";
+import { useState } from "react";
 import { motion, Variants, useAnimationControls } from "framer-motion";
 import ArrowSvg from "@/svg/angle-right-sharp-regular.svg";
 import ImageSlider from "./ImageSlider";
 
 export default function Gallery() {
+  const [clickNext, setClickNext] = useState(false);
+
+  const handleMoreClick = () => {
+    setClickNext(true);
+  };
+
   const variants: Variants = {
     offscreen: { opacity: 0, y: 30 },
     onscreen: {
@@ -37,6 +44,7 @@ export default function Gallery() {
           initial="offscreen"
           animate={buttonControls}
           variants={variants}
+          onClick={handleMoreClick}
         >
           <p className="font-semibold text-[24px] max-sm:text-[18px] text-[#1581FF] mr-[7px] hover:underline">
             더 있어요!
@@ -46,7 +54,7 @@ export default function Gallery() {
           </div>
         </motion.button>
       </div>
-      <ImageSlider />
+      <ImageSlider clickNext={clickNext} setClickNext={setClickNext} />
     </motion.section>
   );
 }
