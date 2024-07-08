@@ -2,11 +2,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import Image from "next/image";
-import world1 from "@/img/KakaoTalk_Photo_2024-07-05-23-19-01.png";
 import SliderButtons from "./SliderButtons";
+import { images } from "./images";
 
 interface ImageSliderProps {
-  // 추가된 부분
   clickNext: boolean;
   setClickNext: (value: boolean) => void;
 }
@@ -28,21 +27,18 @@ export default function ImageSlider({
         modules={[Autoplay]}
         className="mySwiper"
       >
-        <SwiperSlide>
-          <figure className="overflow-hidden w-full rounded-[30px] max-sm:rounded-[14px]">
-            <Image src={world1} alt="world1" width={1200} height={675} />
-          </figure>
-        </SwiperSlide>
-        <SwiperSlide>
-          <figure className="overflow-hidden w-full rounded-[30px] max-sm:rounded-[14px]">
-            <Image src={world1} alt="world1" width={1200} height={675} />
-          </figure>
-        </SwiperSlide>
-        <SwiperSlide>
-          <figure className="overflow-hidden w-full rounded-[30px] max-sm:rounded-[14px]">
-            <Image src={world1} alt="world1" width={1200} height={675} />
-          </figure>
-        </SwiperSlide>
+        {Object.values(images).map((image, index) => (
+          <SwiperSlide key={index}>
+            <figure className="overflow-hidden w-full rounded-[30px] max-sm:rounded-[14px]">
+              <Image
+                src={image.src}
+                alt={image.alt}
+                width={1200}
+                height={675}
+              />
+            </figure>
+          </SwiperSlide>
+        ))}
         <SliderButtons clickNext={clickNext} setClickNext={setClickNext} />
       </Swiper>
     </div>
