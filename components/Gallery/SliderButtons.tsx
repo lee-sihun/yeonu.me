@@ -78,9 +78,17 @@ const useSliderControl = (swiper: any) => {
       if (showWarning) return;
       setClickCount((prevCount) => prevCount + 1);
       if (direction === "prev") {
-        swiper.slidePrev();
+        if (swiper.isBeginning) {
+          swiper.slideTo(swiper.slides.length - 1);
+        } else {
+          swiper.slidePrev();
+        }
       } else {
-        swiper.slideNext();
+        if (swiper.isEnd) {
+          swiper.slideTo(0);
+        } else {
+          swiper.slideNext();
+        }
       }
     },
     [swiper, showWarning]
@@ -112,10 +120,10 @@ export default function SliderButtons({
         animate={showWarning ? "warning" : "normal"}
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
         className={`w-[70px] h-[70px] max-sm:w-[60px] max-sm:h-[60px] rounded-full border-[1px] border-[#C9C9C9] flex items-center justify-center ${
-          isBeginning || showWarning ? "opacity-50 cursor-not-allowed" : ""
+          showWarning ? "opacity-50 cursor-not-allowed" : ""
         }`}
         onClick={() => handleClick("prev")}
-        disabled={isBeginning || showWarning}
+        disabled={showWarning}
       >
         <div className="w-[25px] h-[36px] max-sm:w-[20px] max-sm:h-[29px]">
           <LeftArrow />
@@ -149,10 +157,10 @@ export default function SliderButtons({
         animate={showWarning ? "warning" : "normal"}
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
         className={`w-[70px] h-[70px] max-sm:w-[60px] max-sm:h-[60px] rounded-full border-[1px] border-[#C9C9C9] flex items-center justify-center ${
-          isEnd || showWarning ? "opacity-50 cursor-not-allowed" : ""
+          showWarning ? "opacity-50 cursor-not-allowed" : ""
         }`}
         onClick={() => handleClick("next")}
-        disabled={isEnd || showWarning}
+        disabled={showWarning}
       >
         <div className="w-[25px] h-[36px] max-sm:w-[20px] max-sm:h-[29px] rotate-180">
           <LeftArrow />
