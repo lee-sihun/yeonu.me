@@ -7,7 +7,7 @@ export const images = {
     alt: "world1",
   },
   2: {
-    src: world1,
+    src: img2,
     alt: "world2",
   },
   3: {
