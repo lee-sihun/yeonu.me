@@ -1,5 +1,6 @@
 import world1 from "@/img/KakaoTalk_Photo_2024-07-05-23-19-01.png";
 import img1 from "@/img/img1.webp";
+import img2 from "@/img/img2.webp"
 
 export const images = {
   1: {
