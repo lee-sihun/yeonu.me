@@ -1,6 +1,7 @@
 import world1 from "@/img/KakaoTalk_Photo_2024-07-05-23-19-01.png";
 import img1 from "@/img/img1.webp";
 import img2 from "@/img/img2.webp"
+import img2 from "@/img/img3.gif"
 
 export const images = {
   1: {
@@ -12,7 +13,7 @@ export const images = {
     alt: "world2",
   },
   3: {
-    src: world1,
+    src: img3,
     alt: "world3",
   },
   4: {
