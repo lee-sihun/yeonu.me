@@ -136,7 +136,7 @@ export default function Test() {
               )
             )}
           </motion.div>
-          <p className="mx-auto mt-[50px] max-sm:mt-[32px] font-medium text-[24px] max-sm:text-[20px] tracking-[-0.48px] text-[#313131]">
+          <p className="text-center leading-[32px] mx-auto mt-[50px] max-sm:mt-[32px] font-medium text-[24px] max-sm:text-[20px] tracking-[-0.48px] text-[#313131]">
             {skills[activeYear].description}
           </p>
         </motion.div>
