@@ -4,6 +4,7 @@ import "swiper/css";
 import Image from "next/image";
 import SliderButtons from "./SliderButtons";
 import { images } from "./images";
+import { videos } from "./videos";
 
 interface ImageSliderProps {
   clickNext: boolean;
@@ -27,14 +28,23 @@ export default function ImageSlider({
         modules={[Autoplay]}
         className="mySwiper"
       >
-        {Object.values(images).map((image, index) => (
+        {Object.values(videos).map((video, index) => (
           <SwiperSlide key={index}>
             <figure className="overflow-hidden w-full rounded-[30px] max-sm:rounded-[14px]">
-              <Image
+              {/* <Image
                 src={image.src}
                 alt={image.alt}
                 width={1200}
                 height={675}
+              /> */}
+              <video
+                src={video.src}
+                width={1200}
+                height={675}
+                loop
+                autoPlay
+                muted
+                className="w-full h-auto"
               />
             </figure>
           </SwiperSlide>

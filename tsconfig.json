@@ -23,6 +23,7 @@
       "@/components": ["./components"],
       "@/svg/*": ["./public/svg/*"],
       "@/img/*": ["./public/img/*"],
+      "@/video/*": ["./public/video/*"],
       "@/json/*": ["./public/json/*"]
     }
   },
