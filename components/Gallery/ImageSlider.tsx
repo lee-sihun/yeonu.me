@@ -45,6 +45,7 @@ export default function ImageSlider({
                 autoPlay
                 muted
                 disablePictureInPicture
+                controlsList="nodownload noremoteplayback"
                 className="w-full h-auto"
               />
             </figure>
