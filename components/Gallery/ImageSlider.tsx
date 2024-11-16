@@ -43,6 +43,7 @@ export default function ImageSlider({
                 height={675}
                 loop
                 autoPlay
+                playsInline
                 muted
                 disablePictureInPicture
                 controlsList="nodownload noremoteplayback"
