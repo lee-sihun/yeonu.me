@@ -25,7 +25,9 @@
       "@/img/*": ["./public/img/*"],
       "@/video/*": ["./public/video/*"],
       "@/json/*": ["./public/json/*"],
-      "contentlayer/generated": ["./.contentlayer/generated"]
+      "contentlayer/generated": ["./.contentlayer/generated"],
+      "@/hooks": ["./hooks"],
+      "@/stores": ["./stores"]
     }
   },
   "include": [
