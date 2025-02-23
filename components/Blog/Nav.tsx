@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import LogoSvg from "../public/svg/saturn.svg";
+import LogoSvg from "../../public/svg/saturn.svg";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { Squircle } from "@/components/Blog/Squircle";

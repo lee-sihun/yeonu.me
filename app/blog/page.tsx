@@ -1,5 +1,11 @@
 import BlogContent from "@/components/Blog/BlogContent";
+import Header from "@/components/Blog/Header";
 
 export default function Home() {
-  return <BlogContent />;
+  return (
+    <>
+      <Header />
+      <BlogContent />
+    </>
+  )
 }

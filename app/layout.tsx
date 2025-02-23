@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import "@/styles/globals.css";
 import "@/styles/reset.css";
 import localFont from "next/font/local";
+import Providers from "@/components/Blog/Provider";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://yeonu.me"),
@@ -58,8 +59,10 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={pretendard.className}>
-        <Header />
-        <main>{children}</main>
+        <Providers>
+          <Header />
+          <main>{children}</main>
+        </Providers>
       </body>
     </html>
   );
