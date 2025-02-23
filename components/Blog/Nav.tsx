@@ -7,10 +7,10 @@ import { Squircle } from "@/components/Blog/Squircle";
 
 const nav: { title: string; location: string }[] = [
   // { title: "Home", location: "/" },
-  { title: "Blog", location: "/blog" },
+  // { title: "Blog", location: "/blog" },
   // { title: "포트폴리오", location: "/portfolio" },
-  { title: "About", location: "/about" },
-  { title: "GuestBook", location: "/guestbook" },
+  { title: "About", location: "/" },
+  // { title: "GuestBook", location: "/guestbook" },
 ];
 
 export default function Nav() {
@@ -33,21 +33,21 @@ export default function Nav() {
 
   return (
     <nav className="flex items-center">
-      <Link className="hidden md:flex items-center" href="/">
-        <LogoSvg className="fill-black dark:fill-white" />
-        <h1 className="text-lg font-bold ml-[5px]">시훈의 개발노트</h1>
+      <Link className="hidden md:flex items-center" href="/blog">
+        {/* <LogoSvg className="fill-black dark:fill-white" /> */}
+        <h1 className="text-lg font-bold ml-[5px]">Blog</h1>
       </Link>
       <div
         className="flex md:hidden items-center cursor-pointer"
         onClick={handleToggle}
       >
-        <LogoSvg className="fill-black dark:fill-white" />
-        <h1 className="text-lg font-bold ml-[5px]">시훈의 개발노트</h1>
+        {/* <LogoSvg className="fill-black dark:fill-white" /> */}
+        <h1 className="text-lg font-bold ml-[5px]">Blog</h1>
       </div>
       <div className="hidden md:flex items-center">
-        {nav.slice(1).map((item) => {
+        {nav.map((item) => {
           const { title, location } = item;
-          const isActive = pathname.includes(location); //경로가 일치하는지 체크
+          const isActive = pathname === location; //경로가 일치하는지 체크
           return (
             <Squircle
               key={title}

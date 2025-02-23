@@ -7,10 +7,8 @@ interface CategoryProps {
 
 const category: { title: string }[] = [
   { title: "All" },
-  { title: "Develop" },
+  { title: "Play" },
   { title: "Design" },
-  { title: "CS" },
-  // { title: "PS" },
   { title: "Etc" },
 ];
 
