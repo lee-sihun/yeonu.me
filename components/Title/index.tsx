@@ -3,8 +3,10 @@ import { useState, useRef } from "react";
 import { motion, Variants, AnimatePresence } from "framer-motion";
 import LottieComponent from "@/components/LottieComponent";
 import logoJson from "@/json/logo.json";
+import { useRouter } from "next/navigation";
 
 export default function Title() {
+  const router = useRouter();
   const lottieRef = useRef(null);
   const [description, setDescription] = useState(
     <span>
@@ -26,6 +28,10 @@ export default function Title() {
     }
   };
 
+  const handleLottieClick = () => {
+    router.push("/blog");
+  };
+
   const variants: Variants = {
     offscreen: { opacity: 0 },
     onscreen: {
@@ -45,13 +51,18 @@ export default function Title() {
         className="z-10 flex flex-col items-center justify-center"
         variants={variants}
       >
-        <LottieComponent
-          animationData={logoJson}
-          loop={false}
-          autoplay={true}
-          ref={lottieRef}
-          onEnterFrame={handleEnterFrame}
-        />
+        <div
+          onClick={handleLottieClick}
+          className="cursor-pointer" 
+        >
+          <LottieComponent
+            animationData={logoJson}
+            loop={false}
+            autoplay={true}
+            ref={lottieRef}
+            onEnterFrame={handleEnterFrame}
+          />
+        </div>
         <div className="mt-[-32px] text-center text-[24px] max-sm:text-[16px] text-[#777777] tracking-[-0.52px] max-sm:tracking-[-0.28px] leading-[34px] max-sm:leading-[22px] whitespace-pre-line flex items-start">
           <AnimatePresence mode="wait">
             <motion.p
