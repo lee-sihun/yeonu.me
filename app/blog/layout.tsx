@@ -1,4 +1,5 @@
 import Providers from "@/components/Blog/Provider";
+import "@/styles/blog.css";
 
 export default function BlogLayout({
   children,

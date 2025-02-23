@@ -9,7 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "cmdk": "^1.0.4",
+    "@emotion/is-prop-valid": "^1.2.2",
+    "cmdk": "^1.0.0",
     "contentlayer": "^0.3.4",
     "date-fns": "^3.6.0",
     "figma-squircle": "^1.1.0",
