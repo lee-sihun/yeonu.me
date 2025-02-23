@@ -12,7 +12,7 @@ const CommandMenu = dynamic(() => import("@/components/Blog/CommandMenu"));
 export default function Header() {
   const [open, setOpen] = useState(false);
   return (
-    <header className="flex justify-center">
+    <header className="headerglass-normal dark:headerglass-dark fixed top-0 left-0 w-full z-[5] flex justify-center border-b-[1px] border-[#e8e8e8] border-solid bg-white/5 dark:bg-black/40 dark:border-[#2d2d2d]/70">
       <div className="w-[1068px] h-[60px] flex justify-between items-center px-6">
         <Nav />
         <div className="flex items-center">

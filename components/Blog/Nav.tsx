@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import LogoSvg from "../../public/svg/saturn.svg";
+import LogoSvg from "../../public/svg/mug-and-saucer.svg";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { Squircle } from "@/components/Blog/Squircle";
@@ -34,15 +34,15 @@ export default function Nav() {
   return (
     <nav className="flex items-center">
       <Link className="hidden md:flex items-center" href="/blog">
-        {/* <LogoSvg className="fill-black dark:fill-white" /> */}
-        <h1 className="text-lg font-bold ml-[5px]">Blog</h1>
+        <LogoSvg className="fill-black dark:fill-white" />
+        <h1 className="text-lg font-bold ml-[8px]">Blog</h1>
       </Link>
       <div
         className="flex md:hidden items-center cursor-pointer"
         onClick={handleToggle}
       >
-        {/* <LogoSvg className="fill-black dark:fill-white" /> */}
-        <h1 className="text-lg font-bold ml-[5px]">Blog</h1>
+        <LogoSvg className="fill-black dark:fill-white" />
+        <h1 className="text-lg font-bold ml-[8px]">Blog</h1>
       </div>
       <div className="hidden md:flex items-center">
         {nav.map((item) => {

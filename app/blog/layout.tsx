@@ -11,6 +11,7 @@ export default function BlogLayout({
   return (
     <Providers>
       <Header />
+      <div className="h-[61px] w-full" />
       {children}
     </Providers>
   );

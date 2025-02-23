@@ -67,6 +67,20 @@ main {
   -webkit-backdrop-filter: blur(20px);
 }
 
+.headerglass-normal {
+  background: #ffffff;
+  /* box-shadow: -8px 8px 50px 0px rgba(0, 0, 0, 0.1); */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.headerglass-dark {
+  background: #000000;
+  /* box-shadow: -8px 8px 50px 0px rgba(0, 0, 0, 0.1); */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
 /* about 페이지 애니메이션 */
 /* 텍스트 애니메이션 */
 .about-text {
