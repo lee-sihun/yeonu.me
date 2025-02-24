@@ -4,7 +4,7 @@ import type { MDXComponents } from "mdx/types";
 import Link from "next/link";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import { Pre } from "@/components/Blog/Pre";
-import Comments from "@/components/Blog/Comments";
+// import Comments from "@/components/Blog/Comments";
 import Tag from "@/components/Blog/Tag";
 
 const mdxComponents: MDXComponents = {
@@ -103,7 +103,7 @@ export default function Page({ params }: { params: { slug: string } }) {
         <MDXContent components={mdxComponents} />
       </section>
       <div className="h-px w-full my-5 bg-[#D4D4D4] dark:bg-[#686868]" />
-      <Comments />
+      {/* <Comments /> */}
     </article>
   );
 }
