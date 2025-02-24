@@ -56,9 +56,9 @@ export default function CommandMenu({ open, setOpen }: CommandMenuProps) {
   };
 
   return (
-    <div 
+    <div
       id="cmdkbg"
-      className={`z-10 fixed top-0 left-0 w-full h-full bg-black bg-opacity-25 backdrop-blur-sm ${
+      className={`z-10 fixed top-0 left-0 w-full h-screen bg-black bg-opacity-25 ${
         open ? "" : "hidden"
       }`}
     >
@@ -115,18 +115,11 @@ export default function CommandMenu({ open, setOpen }: CommandMenuProps) {
                     <kbd>B</kbd>
                   </div>
                 </Command.Item>
-                <Command.Item onSelect={() => routing("/about")}>
+                <Command.Item onSelect={() => routing("/")}>
                   <AboutSvg />
                   About
                   <div className="cmdk-vercel-shortcuts">
                     <kbd>A</kbd>
-                  </div>
-                </Command.Item>
-                <Command.Item onSelect={() => routing("/guestbook")}>
-                  <BookSvg />
-                  GuestBook
-                  <div className="cmdk-vercel-shortcuts">
-                    <kbd>G</kbd>
                   </div>
                 </Command.Item>
               </Command.Group>
@@ -141,23 +134,23 @@ export default function CommandMenu({ open, setOpen }: CommandMenuProps) {
               </Command.Group>
 
               <Command.Group heading="Links">
-                <Command.Item
+                {/* <Command.Item
                   onSelect={() => routing("mailto:cnsa201119@gmail.com")}
                 >
                   <MailSvg /> Mail
-                </Command.Item>
+                </Command.Item> */}
                 <Command.Item
-                  onSelect={() => routing("https://github.com/lee-sihun")}
+                  onSelect={() => routing("https://github.com/yeonu-me")}
                 >
                   <GithubSvg /> Github
                 </Command.Item>
-                <Command.Item
+                {/* <Command.Item
                   onSelect={() =>
                     routing("https://discordapp.com/users/479635064368398342")
                   }
                 >
                   <DisordSvg /> Discord
-                </Command.Item>
+                </Command.Item> */}
               </Command.Group>
             </>
           )}
